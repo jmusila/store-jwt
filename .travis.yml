@@ -1,0 +1,14 @@
+
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip install -r Application/requirements.txt
+script:
+  - pytest
+  - pytest --cov-report term-missing --cov=app
+
+after_success:
+   - "coveralls"
